@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Shared Key</th>
+            <th scope="col">Business ID</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Data added</th>
+            <th scope="col"><i class="bi bi-pencil-fill"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of clients">
+            <td>{{ client.sharedId }}</td>
+            <td>{{ client.businessId }}</td>
+            <td>{{ client.email }}</td>
+            <td>{{ client.phone }}</td>
+            <td>{{ client.createAt }}</td>
+            <td><i class="bi bi-pencil"></i></td>
+        </tr>
+    </tbody>
+</table>

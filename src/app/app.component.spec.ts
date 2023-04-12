@@ -1,16 +1,31 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MenuComponent } from './components/shared/menu/menu.component';
+import { SearchComponent } from './components/search/search.component';
+import { ClientsComponent } from './components/clients/clients.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ClientService } from './services/client.service';
+import { ClientComponent } from './components/client/client.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule 
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        MenuComponent,
+        SearchComponent,
+        ClientsComponent,
+        ClientComponent
       ],
+      providers: [ClientService]
     }).compileComponents();
   });
 
@@ -26,10 +41,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('alianza');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('alianza app is running!');
-  });
 });
