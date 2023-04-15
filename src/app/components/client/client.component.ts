@@ -52,7 +52,7 @@ export class ClientComponent {
 
     this.clientService.saveClient(client)
     .subscribe( resp => {
-      this.clientService.nuevoClient.emit(resp);
+      this.clientService.nuevoClient.emit(resp?.data);
       this.form.reset();
       Swal.fire(
         'SUCCESS',

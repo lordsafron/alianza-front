@@ -1,7 +1,5 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Client } from 'src/app/models/response.model';
-import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-search',
@@ -14,6 +12,7 @@ export class SearchComponent {
   @ViewChild('buscarTexto') buscarTexto: ElementRef;
   clients?:Client[] = []
   termino:string;
+  comp: any;
 
   constructor() {
 

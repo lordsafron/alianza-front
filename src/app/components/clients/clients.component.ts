@@ -23,7 +23,7 @@ export class ClientsComponent implements OnInit {
   cargarClients() {
     this.clientService.getAllClients()
     .subscribe( res => {
-      this.clients = res;
+      this.clients = res?.data;
       this.clientsData = this.clients
     }, (err) => {
       // Si sucede un error

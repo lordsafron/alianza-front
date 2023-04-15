@@ -18,23 +18,14 @@ export class ClientService {
   constructor(private http: HttpClient) { }
 
   getAllClients() {
-    return this.http.get<Response>(`${base_url}/${this.path}`)
-      .pipe(
-        map( resp => resp?.data)
-      );
+    return this.http.get<Response>(`${base_url}/${this.path}`);
   }
 
   getClientBySharedId(sharedId: string) {
-    return this.http.get<Response>(`${base_url}/${this.path}/${sharedId}`)
-      .pipe(
-        map( resp => resp?.data)
-      );
+    return this.http.get<Response>(`${base_url}/${this.path}/${sharedId}`);
   }
 
   saveClient(client: Client) {
-    return this.http.post<Response>(`${base_url}/${this.path}`, client)
-      .pipe(
-        map( resp => resp?.data)
-      );
+    return this.http.post<Response>(`${base_url}/${this.path}`, client);
   }
 }

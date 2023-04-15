@@ -4,10 +4,10 @@
             <input class="form-control mr-sm-2" type="text" placeholder="Enter shared key" (keyup.enter)="buscarClient(buscarTexto.value)" #buscarTexto>
         </div>
         <div class="col-2">
-            <button (click)="buscarClient(buscarTexto.value)" class="btn btn-outline-primary my-2 my-sm-0" type="button">Buscar</button>
+            <button id="buscar" (click)="buscarClient(buscarTexto.value)" class="btn btn-outline-primary my-2 my-sm-0" type="button">Buscar</button>
         </div>
         <div class="col">
-            <button (click)="limpiar()" class="btn btn-outline-primary my-2 my-sm-0" type="button">Limpiar</button>
+            <button id="limpiar" (click)="limpiar()" class="btn btn-outline-primary my-2 my-sm-0" type="button">Limpiar</button>
         </div>
     </div>
 </form>
